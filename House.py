@@ -5,8 +5,18 @@ import matplotlib.pyplot as plt
 from  sklearn.linear_model import LinearRegression
 from sklearn.metrics  import mean_squared_error,r2_score
 import pickle
-st.image(r"C:\Users\DELL\Pictures\inno_image.webp")
-st.image("images/inno_image.webp")
+import os
+
+image_path = r"C:\Users\DELL\Pictures\inno_image.webp"
+st.write(f"Image path: {image_path}")
+st.write(f"File exists: {os.path.exists(image_path)}")
+
+if os.path.exists(image_path):
+    st.image(image_path)
+else:
+    st.error("Image file not found.")
+
+    
 name=st.title('Market Trends and Home Values')
 st.header('Enter below details')
 model = pickle.load(open(r"C:\Users\DELL\Downloads\lr.pkl","rb"))

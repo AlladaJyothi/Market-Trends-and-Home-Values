@@ -19,7 +19,7 @@ else:
     
 name=st.title('Market Trends and Home Values')
 st.header('Enter below details')
-model = pickle.load(open(lr.pkl","rb"))
+model = pickle.load(open("lr.pkl","rb"))
 
 SquareFeet = st.number_input("Enter the size of the house",min_value = 600, max_value = 20000, step = 50)
 Bedrooms = st.number_input("Enter the number of bedrooms",min_value = 0, max_value = 5, step = 1)	

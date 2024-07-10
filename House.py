@@ -7,8 +7,7 @@ from sklearn.metrics  import mean_squared_error,r2_score
 import pickle
 import os
 
-image_path = "inno_image.webp"
-st.image_path
+st.image("inno_image.webp")
 name=st.title('Market Trends and Home Values')
 st.header('Enter below details')
 model = pickle.load(open("lr.pkl","rb"))

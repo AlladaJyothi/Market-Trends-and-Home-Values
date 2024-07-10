@@ -7,16 +7,8 @@ from sklearn.metrics  import mean_squared_error,r2_score
 import pickle
 import os
 
-image_path = r"C:\Users\DELL\Pictures\inno_image.webp"
-st.write(f"Image path: {image_path}")
-st.write(f"File exists: {os.path.exists(image_path)}")
-
-if os.path.exists(image_path):
-    st.image(image_path)
-else:
-    st.error("Image file not found.")
-
-    
+image_path = "inno_image.webp"
+st.image_path
 name=st.title('Market Trends and Home Values')
 st.header('Enter below details')
 model = pickle.load(open("lr.pkl","rb"))
@@ -31,8 +23,6 @@ YearBuilt = st.number_input("Enter the number of year of construction",min_value
 if st.button("Submit"):
     price=model.predict([[SquareFeet,Bedrooms,Bathrooms,neighbor,YearBuilt]])
     st.write(f'The price of the flat with given details is Rs.{price}')
-    #except Exception as e:
-        #st.error(f'Error making prediction:{e}')
-        
+    
 
     
